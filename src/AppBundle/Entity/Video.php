@@ -10,6 +10,7 @@ use Doctrine\Common\Collections\ArrayCollection;
 /**
  * @ORM\Entity
  * @ORM\Table(name="video")
+ * @ORM\Entity(repositoryClass="AppBundle\Repository\VideoRepository")
  */
 class Video
 {

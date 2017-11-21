@@ -6,6 +6,8 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
 
+use AppBundle\Entity\Video;
+
 class DefaultController extends Controller
 {
     /**
@@ -13,9 +15,18 @@ class DefaultController extends Controller
      */
     public function indexAction(Request $request)
     {
-        // replace this example code with whatever you need
-        return $this->render('default/index.html.twig', [
-            'base_dir' => realpath($this->getParameter('kernel.project_dir')).DIRECTORY_SEPARATOR,
+        $films_disponible = $this->getDoctrine()
+        ->getRepository(Video::class)
+        ->findAvailable();
+
+        $film_prochainement_disponible = $this->getDoctrine()
+        ->getRepository(Video::class)
+        ->findComingSoon();
+
+
+        return $this->render('AppBundle::films.html.twig', [
+            'films_disponible' => $films_disponible,
+            'films_prochainement_disponible' => $film_prochainement_disponible,
         ]);
     }
 }

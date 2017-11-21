@@ -1,0 +1,21 @@
+{% extends 'AppBundle::layout.html.twig' %}
+
+{% block title %}Les films{% endblock title%}
+{% block body %}
+    {% if films_disponible %}
+    <h1>Les films actuellement disponible</h1>
+    <ul>
+    	{% for film in films_disponible %}
+    	<li>{{ film.title }} - {{ film.price }}€</li>
+    	{% endfor %}
+    </ul>
+    {% endif %}
+    {% if films_prochainement_disponible %}
+    <h1>Les films prochainement disponible</h1>
+    <ul>
+    	{% for film in films_prochainement_disponible %}
+    	<li>{{ film.title }} - {{ film.price }}€</li>
+    	{% endfor %}
+    </ul>
+    {% endif %}
+{% endblock body %}
