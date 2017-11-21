@@ -1,0 +1,22 @@
+default:
+    autoload:
+        - %paths.base%/tests/functionals/features/bootstrap
+    suites:
+        web:
+            type: symfony_bundle
+            bundle: AppBundle
+            paths:
+                - "%paths.base%/tests/functionals/features/video"
+            contexts:
+                - Tests\Functionals\Contexts\Video
+            filters:
+                tags: "@web"
+    extensions:
+        Behat\Symfony2Extension: 
+            kernel:
+                bootstrap: ''
+        Behat\MinkExtension:
+            base_url: "http://192.168.33.10/app_dev.php/"
+            sessions:
+                default_session:
+                    symfony2: ~
