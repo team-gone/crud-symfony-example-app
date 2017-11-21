@@ -17,6 +17,7 @@ Scotch box
 ==========
 
 VirtualHost with Apache2 must be setup like this : 
+
 1. VHost 
 
 	```
@@ -65,7 +66,7 @@ VirtualHost with Apache2 must be setup like this :
 		sudo service apache2 reload
 		sudo service apache2 restart
 
-		
+
 	```
 
 2. Install project
