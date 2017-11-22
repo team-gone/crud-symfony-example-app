@@ -3,14 +3,20 @@
 pipeline {
   agent any
   stages {
-    stage('Prepare Source') {
+    stage('Prepare and configure Source') {
       steps {
         sh 'composer install'
+
+        withCredentials([usernamePassword(credentialsId: 'DB_CREDENTIALS', passwordVariable: 'DB_PASSWORD', usernameVariable: 'DB_USER'), usernamePassword(credentialsId: 'MAILER_CREDENTIALS', passwordVariable: 'MAILER_PASSWORD', usernameVariable: 'MAILER_USER')]) {
+            sh "sed -e 's#%DB_HOST%#${params.DB_HOST}#;s#%DB_PORT%#${params.DB_PORT}#;s#%DB_NAME%#${params.DB_NAME}#;s#%DB_USER%#${DB_USER}#;s#%DB_PASSWORD%#${DB_PASSWORD}#;s#%MAILER_HOST%#${params.MAILER_HOST}#;s#%MAILER_USER%#${MAILER_USER}#;s#%MAILER_PASSWORD%#${MAILER_PASSWORD}#;s#%SECRET%#${params.SECRET}#' app/config/parameters.yml.dist > app/config/parameters.yml"
+        }
       }
     }
     stage('Test') {
       steps {
-        sh 'phpunit'
+        sh 'phpunit --coverage-text'
+
+        sh 'phploc src'
       }
     }
   }
