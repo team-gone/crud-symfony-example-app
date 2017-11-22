@@ -1,14 +1,18 @@
+aliases:
+    - &url_mink 'http://192.168.33.10/app_dev.php/'
+
 default:
-    autoload:
-        - %paths.base%/tests/functionals/features/bootstrap
     suites:
-        web:
+        user:
+            mink_session: default_session
+            mink_javascript_session: selenium_javascript_session
             type: symfony_bundle
             bundle: AppBundle
             paths:
-                - "%paths.base%/tests/functionals/features/video"
+                - "%paths.base%/tests/functionals/features/user"
             contexts:
-                - Tests\Functionals\Contexts\Video
+                - Tests\Functionals\Contexts\User:
+                    objectManager: '@doctrine.orm.entity_manager'
             filters:
                 tags: "@web"
     extensions:
@@ -16,7 +20,11 @@ default:
             kernel:
                 bootstrap: ''
         Behat\MinkExtension:
-            base_url: "http://192.168.33.10/app_dev.php/"
+            base_url: *url_mink
             sessions:
                 default_session:
                     symfony2: ~
+                selenium_javascript_session:
+                    selenium2:
+                        wd_host: "http://localhost:4444/wd/hub"
+                        browser: safari
