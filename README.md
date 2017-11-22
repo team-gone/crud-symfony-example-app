@@ -95,6 +95,14 @@ VirtualHost with Apache2 must be setup like this :
 		php bin/console f:u:cre
 	```
 
+5. Promote user
+
+	```
+		php bin/console f:u:pro
+	```
+
+	Role should be : ROLE_ADMIN, ROLE_USER and many more.
+
 # Functionals tests
 
 Start server standalone selenium with IE, sfari and Edge :
