@@ -17,6 +17,19 @@ default:
                     objectManager: '@doctrine.orm.entity_manager'
             filters:
                 tags: "@web"
+
+        video:
+            mink_session: default_session
+            mink_javascript_session: selenium_javascript_session
+            type: symfony_bundle
+            bundle: AppBundle
+            paths:
+                - "%paths.base%/tests/functionals/features/video"
+            contexts:
+                - Tests\Functionals\Contexts\Video:
+                    objectManager: '@doctrine.orm.entity_manager'
+            filters:
+                tags: "@web"
     extensions:
         Behat\Symfony2Extension: 
             kernel:
