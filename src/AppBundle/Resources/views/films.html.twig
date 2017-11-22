@@ -4,17 +4,17 @@
 {% block body %}
     {% if films_disponible %}
     <h1>Les films actuellement disponible</h1>
-    <ul>
+    <ul id="actual-films">
     	{% for film in films_disponible %}
-    	<li>{{ film.title }} - {{ film.price }}€</li>
+    	<li id="film-{{ film.id }}">{{ film.title }} - {{ film.price }}€</li>
     	{% endfor %}
     </ul>
     {% endif %}
     {% if films_prochainement_disponible %}
     <h1>Les films prochainement disponible</h1>
-    <ul>
+    <ul id="coming-soon-films">
     	{% for film in films_prochainement_disponible %}
-    	<li>{{ film.title }} - {{ film.price }}€</li>
+    	<li id="film-{{ film.id }}">{{ film.title }} - {{ film.price }}€</li>
     	{% endfor %}
     </ul>
     {% endif %}
