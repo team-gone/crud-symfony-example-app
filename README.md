@@ -4,12 +4,18 @@ Symfony CRUD
 A Symfony project created on November 20, 2017, 11:05 am.
 
 
-Install
+Install on your host
 =======
 
 ```
 sudo apt get update
 sudo apt install vagrant VirtualBox
+```
+
+Go to your vagrant
+=====
+
+```
 sudo apt-get install --reinstall `dpkg -l | grep 'ii  php7' | awk '{ printf($2" "); next}'`
 ```
 
@@ -82,3 +88,25 @@ VirtualHost with Apache2 must be setup like this :
 	```
 		php bin/console d:s:u
 	```
+
+4. Add a user
+
+	```
+		php bin/console f:u:cre
+	```
+
+# Functionals tests
+
+Start server standalone selenium with IE, sfari and Edge :
+
+Java JRE and JDK 8 is required.
+
+```
+	java -jar var/selenium-server-standalone-3.7.1.jar
+```
+
+Then open another window and go to project and do a 
+
+```
+	vendor/bin/behat
+```

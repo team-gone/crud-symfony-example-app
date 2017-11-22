@@ -7,6 +7,7 @@ use Behat\Behat\Context\SnippetAcceptingContext;
 use Behat\MinkExtension\Context\MinkContext;
 use Behat\Symfony2Extension\Context\KernelAwareContext;
 use Behat\Symfony2Extension\Context\KernelDictionary;
+use Doctrine\Common\Persistence\ObjectManager;
 use Symfony\Component\HttpKernel\KernelInterface;
 
 /**
@@ -14,17 +15,12 @@ use Symfony\Component\HttpKernel\KernelInterface;
  */
 class FeatureContext extends MinkContext implements Context, SnippetAcceptingContext, KernelAwareContext 
 {
-    public $kernel;
-    
-    /**
-     * Sets Kernel instance.
-     *
-     * @param KernelInterface $kernel
-     */
-    public function setKernel(KernelInterface $kernel)
-    {
-        $this->kernel = $kernel;
+    protected $objectManager;
 
-        return $this;
+    use KernelDictionary;
+
+    function __construct(ObjectManager $objectManager)
+    {
+        $this->objectManager = $objectManager;
     }
 }
