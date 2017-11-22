@@ -17,6 +17,8 @@ pipeline {
         sh 'phpunit --coverage-text --colors=never'
 
         sh 'phploc src'
+
+        sh 'phpmd src text design,cleancode,codesize,controversial,naming,unusedcode'
       }
     }
   }
