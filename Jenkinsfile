@@ -23,7 +23,7 @@ pipeline {
       steps {
         sh 'php vendor/bin/phploc src'
 
-        sh 'php vendor/bin/phpmd src text design,cleancode,codesize,controversial,naming,unusedcode'
+        sh 'php vendor/bin/phpmd src text phpmd_ruleset.xml'
 
         sh 'php vendor/bin/phpcs --config-set installed_paths ../../endouble/symfony3-custom-coding-standard/ && php vendor/bin/phpcs --standard=Symfony3Custom src'
       }
