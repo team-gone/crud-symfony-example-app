@@ -72,11 +72,11 @@ Scenario: Editing all the informations of a movie
 	    | video_title 		| Total Recall   |
 	    | video_price 		| 3              |
 	    | video_description | description    |
-    When I select "Nov" from "video_release_date_date_month"
-    When I select "23" from "video_release_date_date_day"
-    When I select "2017" from "video_release_date_date_year"
-    When I select "16" from "video_release_date_time_hour"
-    When I select "45" from "video_release_date_time_minute"
+    When I select "Nov" from "video_releaseDate_date_month"
+    When I select "23" from "video_releaseDate_date_day"
+    When I select "2017" from "video_releaseDate_date_year"
+    When I select "16" from "video_releaseDate_time_hour"
+    When I select "45" from "video_releaseDate_time_minute"
     Then I press "Save changes"
 	Then I should see "Total Recall"
 
