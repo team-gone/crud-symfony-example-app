@@ -16,6 +16,7 @@ Go to your vagrant
 =====
 
 ```
+sudo composer selfupdate
 sudo apt update
 sudo apt-get install --reinstall `dpkg -l | grep 'ii  php7' | sed -e 's/php7.0/php7.1/g' | awk '{ printf($2" "); next}'`
 sudo apt-get install libapache2-mod-php7.1
