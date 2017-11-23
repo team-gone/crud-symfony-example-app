@@ -46,7 +46,7 @@ VirtualHost with Apache2 must be setup like this :
 	        #ServerName www.example.com
 
 	        ServerAdmin webmaster@localhost
-	        DocumentRoot /var/www/public/web
+	        DocumentRoot /var/www/public/crud/current
 
 	        # Available loglevels: trace8, ..., trace1, debug, info, notice, warn,
 	        # error, crit, alert, emerg.
