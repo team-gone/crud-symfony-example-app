@@ -46,6 +46,7 @@
         "phploc/phploc": "^4.0",
         "phpmd/phpmd": "@stable",
         "phpunit/phpunit": "^6.4",
+        "sebastian/phpcpd": "^3.0",
         "sensio/generator-bundle": "^3.0",
         "squizlabs/php_codesniffer": "2.7.*",
         "symfony/phpunit-bridge": "^3.0"

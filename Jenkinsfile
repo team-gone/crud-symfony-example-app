@@ -26,6 +26,8 @@ pipeline {
         sh 'php vendor/bin/phpmd src text phpmd_ruleset.xml'
 
         sh 'php vendor/bin/phpcs --config-set installed_paths ../../endouble/symfony3-custom-coding-standard/ && php vendor/bin/phpcs --standard=Symfony3Custom src'
+
+        sh 'php vendor/bin/phpcpd src'
       }
     }
     stage('Deploy') {
