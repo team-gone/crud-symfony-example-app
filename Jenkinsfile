@@ -14,11 +14,18 @@ pipeline {
     }
     stage('Test') {
       steps {
-        sh 'phpunit --coverage-text --colors=never'
+        sh 'php vendor/bin/phpunit --coverage-text --colors=never'
 
-        sh 'phploc src'
+        sh 'php vendor/bin/behat'
+      }
+    }
+    stage('QA') {
+      steps {
+        sh 'php vendor/bin/phploc src'
 
-        sh 'phpmd src text design,cleancode,codesize,controversial,naming,unusedcode'
+        sh 'php vendor/bin/phpmd src text design,cleancode,codesize,controversial,naming,unusedcode'
+
+        sh 'php vendor/bin/phpcs --config-set installed_paths ../../endouble/symfony3-custom-coding-standard/ && php vendor/bin/phpcs --standard=Symfony3Custom src'
       }
     }
   }
