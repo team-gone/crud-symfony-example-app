@@ -28,5 +28,10 @@ pipeline {
         sh 'php vendor/bin/phpcs --config-set installed_paths ../../endouble/symfony3-custom-coding-standard/ && php vendor/bin/phpcs --standard=Symfony3Custom src'
       }
     }
+    stage('Deploy') {
+      steps {
+        sh 'rocketeer deploy --on="production"'
+      }
+    }
   }
 }

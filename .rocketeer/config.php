@@ -41,7 +41,7 @@ return [
             'host'      => '192.168.33.11',
             'username'  => 'vagrant',
             'password'  => '',
-            'key'       => '/home/vagrant/.ssh/id_rsa',
+            'key'       => '/id_rsa',
             'keyphrase' => '',
             'agent'     => '',
             'db_role'   => true,
