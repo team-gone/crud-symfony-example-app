@@ -17,6 +17,10 @@ Go to your vagrant
 
 ```
 sudo apt-get install --reinstall `dpkg -l | grep 'ii  php7' | sed -e 's/php7.0/php7.1/g' | awk '{ printf($2" "); next}'`
+sudo apt-get install libapache2-mod-php7.1
+sudo a2dismod php7.0
+sudo a2enmod php7.1
+sudo service apache2 restart
 ```
 
 Scotch box
