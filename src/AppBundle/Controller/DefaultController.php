@@ -12,21 +12,22 @@ class DefaultController extends Controller
 {
     /**
      * @Route("/", name="homepage")
+     *
+     * @return EngineInterface
      */
-    public function indexAction(Request $request)
+    public function indexAction()
     {
-        $films_disponible = $this->getDoctrine()
+        $filmsAvailable = $this->getDoctrine()
         ->getRepository(Video::class)
         ->findAvailable();
 
-        $film_prochainement_disponible = $this->getDoctrine()
+        $filmsComingSoon = $this->getDoctrine()
         ->getRepository(Video::class)
         ->findComingSoon();
 
-
         return $this->render('AppBundle::films.html.twig', [
-            'films_disponible' => $films_disponible,
-            'films_prochainement_disponible' => $film_prochainement_disponible,
+            'filmsAvailable' => $filmsAvailable,
+            'filmsComingSoon' => $filmsComingSoon,
         ]);
     }
 }

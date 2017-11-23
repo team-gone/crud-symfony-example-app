@@ -11,11 +11,11 @@ use Doctrine\ORM\Mapping as ORM;
 class Genre
 {
     /**
-     * @ORM\Column(type="integer")
+     * @ORM\Column(type="integer", name="id")
      * @ORM\Id
      * @ORM\GeneratedValue(strategy="AUTO")
      */
-    private $id;
+    private $genreId;
 
     /**
      * @ORM\Column(type="string", length=100)
@@ -28,13 +28,13 @@ class Genre
     private $description;
 
     /**
-     * Get id
+     * Get genreId
      *
      * @return integer
      */
-    public function getId()
+    public function getGenreId()
     {
-        return $this->id;
+        return $this->genreId;
     }
 
     /**
@@ -85,6 +85,11 @@ class Genre
         return $this->description;
     }
 
+    /**
+     * Magic __toString function
+     *
+     * @return String
+     */
     public function __toString()
     {
         return $this->getTitle();

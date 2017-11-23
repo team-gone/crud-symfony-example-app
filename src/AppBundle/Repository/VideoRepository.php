@@ -6,6 +6,11 @@ use Doctrine\ORM\EntityRepository;
 
 class VideoRepository extends EntityRepository
 {
+    /**
+     * Find all videos orderer by title
+     *
+     * @return EntityManagerInterface
+     */
     public function findAllOrderedByName()
     {
         return $this->getEntityManager()
@@ -15,18 +20,28 @@ class VideoRepository extends EntityRepository
             ->getResult();
     }
 
+    /**
+     * Find available videos orderer by title
+     *
+     * @return EntityManagerInterface
+     */
     public function findAvailable()
     {
-    	return $this->getEntityManager()
+        return $this->getEntityManager()
             ->createQuery(
                 'SELECT v FROM AppBundle:Video v WHERE v.release_date < CURRENT_TIMESTAMP() ORDER BY v.title ASC'
             )
             ->getResult();
     }
 
+    /**
+     * Find coming soon videos orderer by title
+     *
+     * @return EntityManagerInterface
+     */
     public function findComingSoon()
     {
-    	return $this->getEntityManager()
+        return $this->getEntityManager()
             ->createQuery(
                 'SELECT v FROM AppBundle:Video v WHERE v.release_date > CURRENT_TIMESTAMP() ORDER BY v.title ASC'
             )
