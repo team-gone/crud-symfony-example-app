@@ -209,7 +209,7 @@ Vagrant 2 is the Prod vagrant vagrant
 		Change
 
 		```
-		DocumentRoot /var/www/public/crud/web
+		DocumentRoot /var/www/public/crud/current/web
 		```
 
 		Restart and reload apache2
