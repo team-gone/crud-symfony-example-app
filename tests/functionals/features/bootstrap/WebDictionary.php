@@ -16,4 +16,26 @@ trait WebDictionary
         $link->click();
         return $this;
     }
+
+    protected function find($type, $selector)
+    {
+        return $this->getSession()->getPage()->find($type, $selector);
+    }
+    
+    /**
+     * @When When I click on the text :text
+     */
+    public function whenIClickOnTheText($text)
+    {
+    	throw new PendingException();
+        $session = $this->getSession();
+        $element = $session->getPage()->find(
+            'xpath',
+            $session->getSelectorsHandler()->selectorToXpath('xpath', '//a[text()="'. $text .'"]')
+        );
+        if (null === $element) {
+            throw new \InvalidArgumentException(sprintf('Cannot find text: "%s"', $text));
+        }
+        $element->click();
+    }
 }
