@@ -2,6 +2,8 @@ aliases:
     - &url_mink 'http://192.168.33.10/app_dev.php/'
 
 default:
+    gherkin:
+        cache: ~
     suites:
         user:
             mink_session: default_session
