@@ -19,7 +19,7 @@ class Video
      * @ORM\Id
      * @ORM\GeneratedValue(strategy="AUTO")
      */
-    private $id;
+    private $videoId;
 
     /**
      * @ORM\Column(type="string", length=100)
@@ -39,29 +39,33 @@ class Video
     /**
      * @ORM\Column(type="datetime")
      */
-    private $release_date;
+    private $releaseDate;
 
     /**
      * @ORM\ManyToMany(targetEntity="Genre")
      * @ORM\JoinTable(name="videos_genres",
-     *      joinColumns={@ORM\JoinColumn(name="video_id", referencedColumnName="id")},
-     *      inverseJoinColumns={@ORM\JoinColumn(name="genre_id", referencedColumnName="id")}
+     *      joinColumns={@ORM\JoinColumn(name="video_id", referencedColumnName="video_id")},
+     *      inverseJoinColumns={@ORM\JoinColumn(name="genre_id", referencedColumnName="genre_id")}
      *      )
      */
     private $genre;
 
-    public function __construct() {
+    /**
+     * Entity Constructor
+     */
+    public function __construct()
+    {
         $this->genre = new ArrayCollection();
     }
 
     /**
-     * Get id
+     * Get videoId
      *
      * @return integer
      */
-    public function getId()
+    public function getVideoId()
     {
-        return $this->id;
+        return $this->videoId;
     }
 
     /**
@@ -145,7 +149,7 @@ class Video
      */
     public function setReleaseDate($releaseDate)
     {
-        $this->release_date = $releaseDate;
+        $this->releaseDate = $releaseDate;
 
         return $this;
     }
@@ -157,7 +161,7 @@ class Video
      */
     public function getReleaseDate()
     {
-        return $this->release_date;
+        return $this->releaseDate;
     }
 
     /**
@@ -194,6 +198,11 @@ class Video
         return $this->genre;
     }
 
+    /**
+     * Magic __toString function
+     *
+     * @return String
+     */
     public function __toString()
     {
         return self::class;

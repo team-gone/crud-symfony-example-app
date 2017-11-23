@@ -12,9 +12,7 @@ use Tests\Functionals\WebDictionary;
 /**
  * Defines application features from the specific context.
  */
-class User extends FeatureContext
+class Video extends FeatureContext
 {
 	use UserDictionary;
-	use WebDictionary;
-
 }

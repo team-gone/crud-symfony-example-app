@@ -23,4 +23,5 @@ class FeatureContext extends MinkContext implements Context, SnippetAcceptingCon
     {
         $this->objectManager = $objectManager;
     }
+      
 }

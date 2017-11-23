@@ -12,9 +12,8 @@ use Tests\Functionals\WebDictionary;
 /**
  * Defines application features from the specific context.
  */
-class User extends FeatureContext
+class Genre extends FeatureContext
 {
 	use UserDictionary;
 	use WebDictionary;
-
 }

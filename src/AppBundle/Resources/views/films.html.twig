@@ -2,19 +2,19 @@
 
 {% block title %}Les films{% endblock title%}
 {% block body %}
-    {% if films_disponible %}
+    {% if filmsAvailable %}
     <h1>Les films actuellement disponible</h1>
     <ul id="actual-films">
-    	{% for film in films_disponible %}
-    	<li id="film-{{ film.id }}">{{ film.title }} - {{ film.price }}€</li>
+    	{% for film in filmsAvailable %}
+    	<li id="film-{{ film.videoId }}">{{ film.title }} - {{ film.price }}€</li>
     	{% endfor %}
     </ul>
     {% endif %}
-    {% if films_prochainement_disponible %}
+    {% if filmsComingSoon %}
     <h1>Les films prochainement disponible</h1>
     <ul id="coming-soon-films">
-    	{% for film in films_prochainement_disponible %}
-    	<li id="film-{{ film.id }}">{{ film.title }} - {{ film.price }}€</li>
+    	{% for film in filmsComingSoon %}
+    	<li id="film-{{ film.videoId }}">{{ film.title }} - {{ film.price }}€</li>
     	{% endfor %}
     </ul>
     {% endif %}

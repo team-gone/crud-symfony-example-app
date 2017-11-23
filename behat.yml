@@ -2,6 +2,8 @@ aliases:
     - &url_mink 'http://192.168.33.10/app_dev.php/'
 
 default:
+    gherkin:
+        cache: ~
     suites:
         user:
             mink_session: default_session
@@ -12,6 +14,19 @@ default:
                 - "%paths.base%/tests/functionals/features/user"
             contexts:
                 - Tests\Functionals\Contexts\User:
+                    objectManager: '@doctrine.orm.entity_manager'
+            filters:
+                tags: "@web"
+
+        video:
+            mink_session: default_session
+            mink_javascript_session: selenium_javascript_session
+            type: symfony_bundle
+            bundle: AppBundle
+            paths:
+                - "%paths.base%/tests/functionals/features/video"
+            contexts:
+                - Tests\Functionals\Contexts\Video:
                     objectManager: '@doctrine.orm.entity_manager'
             filters:
                 tags: "@web"
