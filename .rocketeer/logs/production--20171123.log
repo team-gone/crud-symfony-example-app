@@ -6,23 +6,24 @@
 20171123103100
 20171123103406
 20171123105802
+20171123110356
 /usr/bin/git
 /usr/bin/git
-$ /usr/bin/git clone "https://github.com/team-gone/crud-symfony-example-app" "/var/www/public/crud/releases/20171123110356" --branch="florian" --depth="1"
-/usr/bin/git clone "https://github.com/team-gone/crud-symfony-example-app" "/var/www/public/crud/releases/20171123110356" --branch="florian" --depth="1"
-Cloning into '/var/www/public/crud/releases/20171123110356'...
+$ /usr/bin/git clone "https://github.com/team-gone/crud-symfony-example-app" "/var/www/public/crud/releases/20171123111133" --branch="florian" --depth="1"
+/usr/bin/git clone "https://github.com/team-gone/crud-symfony-example-app" "/var/www/public/crud/releases/20171123111133" --branch="florian" --depth="1"
+Cloning into '/var/www/public/crud/releases/20171123111133'...
 /usr/bin/git
 /usr/bin/git
-$ cd /var/www/public/crud/releases/20171123110356
+$ cd /var/www/public/crud/releases/20171123111133
 $ /usr/bin/git submodule update --init --recursive
-cd /var/www/public/crud/releases/20171123110356
+cd /var/www/public/crud/releases/20171123111133
 /usr/bin/git submodule update --init --recursive
 
 
 /usr/local/bin/composer
-$ cd /var/www/public/crud/releases/20171123110356
+$ cd /var/www/public/crud/releases/20171123111133
 $ /usr/local/bin/composer install --no-interaction --dev --prefer-dist
-cd /var/www/public/crud/releases/20171123110356
+cd /var/www/public/crud/releases/20171123111133
 /usr/local/bin/composer install --no-interaction --dev --prefer-dist
 You are using the deprecated option "dev". Dev packages are installed by default now.
 Loading composer repositories with package information

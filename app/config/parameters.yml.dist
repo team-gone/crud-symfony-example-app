@@ -1,23 +1,12 @@
 # This file is auto-generated during the composer install
 parameters:
-    # Default value if not exist
-    env(DB_HOST):localhost
-    env(DB_PORT):3306
-    env(DB_NAME):symfony
-    env(DB_USER):root
-    env(DB_PASSWORD):root
-    env(MAILER_HOST):localhost
-    env(MAILER_USER):qsd@qsd.com
-    env(MAILER_PASSWORD):qsdqsd
-    env(SECRET):'Qshdkqjshd&&!687687'
-
-    database_host: %env(DB_HOST)%
-    database_port: %env(DB_PORT)%
-    database_name: %env(DB_NAME)%
-    database_user: %env(DB_USER)%
-    database_password: %env(DB_PASSWORD)%
+    database_host: %DB_HOST%
+    database_port: %DB_PORT%
+    database_name: %DB_NAME%
+    database_user: %DB_USER%
+    database_password: %DB_PASSWORD%
     mailer_transport: smtp
-    mailer_host: %env(MAILER_HOST)%
-    mailer_user: %env(MAILER_USER)%
-    mailer_password: %env(MAILER_PASSWORD)%
-    secret: %env(SECRET)%
+    mailer_host: %MAILER_HOST%
+    mailer_user: %MAILER_USER%
+    mailer_password: %MAILER_PASSWORD%
+    secret: %SECRET%
