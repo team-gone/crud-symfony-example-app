@@ -29,7 +29,7 @@ class VideoRepository extends EntityRepository
     {
         return $this->getEntityManager()
             ->createQuery(
-                'SELECT v FROM AppBundle:Video v WHERE v.release_date < CURRENT_TIMESTAMP() ORDER BY v.title ASC'
+                'SELECT v FROM AppBundle:Video v WHERE v.releaseDate < CURRENT_TIMESTAMP() ORDER BY v.title ASC'
             )
             ->getResult();
     }
@@ -43,7 +43,7 @@ class VideoRepository extends EntityRepository
     {
         return $this->getEntityManager()
             ->createQuery(
-                'SELECT v FROM AppBundle:Video v WHERE v.release_date > CURRENT_TIMESTAMP() ORDER BY v.title ASC'
+                'SELECT v FROM AppBundle:Video v WHERE v.releaseDate > CURRENT_TIMESTAMP() ORDER BY v.title ASC'
             )
             ->getResult();
     }

@@ -11,7 +11,7 @@ use Doctrine\ORM\Mapping as ORM;
 class Genre
 {
     /**
-     * @ORM\Column(type="integer", name="id")
+     * @ORM\Column(type="integer")
      * @ORM\Id
      * @ORM\GeneratedValue(strategy="AUTO")
      */

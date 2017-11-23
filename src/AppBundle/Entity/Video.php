@@ -15,7 +15,7 @@ use Doctrine\Common\Collections\ArrayCollection;
 class Video
 {
     /**
-     * @ORM\Column(type="integer", name="id")
+     * @ORM\Column(type="integer")
      * @ORM\Id
      * @ORM\GeneratedValue(strategy="AUTO")
      */
@@ -44,8 +44,8 @@ class Video
     /**
      * @ORM\ManyToMany(targetEntity="Genre")
      * @ORM\JoinTable(name="videos_genres",
-     *      joinColumns={@ORM\JoinColumn(name="video_id", referencedColumnName="id")},
-     *      inverseJoinColumns={@ORM\JoinColumn(name="genre_id", referencedColumnName="id")}
+     *      joinColumns={@ORM\JoinColumn(name="video_id", referencedColumnName="video_id")},
+     *      inverseJoinColumns={@ORM\JoinColumn(name="genre_id", referencedColumnName="genre_id")}
      *      )
      */
     private $genre;

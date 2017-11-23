@@ -6,7 +6,7 @@
     <h1>Les films actuellement disponible</h1>
     <ul id="actual-films">
     	{% for film in filmsAvailable %}
-    	<li id="film-{{ film.id }}">{{ film.title }} - {{ film.price }}€</li>
+    	<li id="film-{{ film.videoId }}">{{ film.title }} - {{ film.price }}€</li>
     	{% endfor %}
     </ul>
     {% endif %}
@@ -14,7 +14,7 @@
     <h1>Les films prochainement disponible</h1>
     <ul id="coming-soon-films">
     	{% for film in filmsComingSoon %}
-    	<li id="film-{{ film.id }}">{{ film.title }} - {{ film.price }}€</li>
+    	<li id="film-{{ film.videoId }}">{{ film.title }} - {{ film.price }}€</li>
     	{% endfor %}
     </ul>
     {% endif %}
