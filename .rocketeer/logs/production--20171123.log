@@ -1,25 +1,25 @@
-20171123105802
-20171123110356
 20171123111133
 20171123113731
 20171123131122
+20171123131942
+20171123132422
 /usr/bin/git
 /usr/bin/git
-$ /usr/bin/git clone "https://github.com/team-gone/crud-symfony-example-app" "/var/www/public/crud/releases/20171123131942" --branch="florian" --depth="1"
-/usr/bin/git clone "https://github.com/team-gone/crud-symfony-example-app" "/var/www/public/crud/releases/20171123131942" --branch="florian" --depth="1"
-Cloning into '/var/www/public/crud/releases/20171123131942'...
+$ /usr/bin/git clone "https://github.com/team-gone/crud-symfony-example-app" "/var/www/public/crud/releases/20171123132916" --branch="florian" --depth="1"
+/usr/bin/git clone "https://github.com/team-gone/crud-symfony-example-app" "/var/www/public/crud/releases/20171123132916" --branch="florian" --depth="1"
+Cloning into '/var/www/public/crud/releases/20171123132916'...
 /usr/bin/git
 /usr/bin/git
-$ cd /var/www/public/crud/releases/20171123131942
+$ cd /var/www/public/crud/releases/20171123132916
 $ /usr/bin/git submodule update --init --recursive
-cd /var/www/public/crud/releases/20171123131942
+cd /var/www/public/crud/releases/20171123132916
 /usr/bin/git submodule update --init --recursive
 
 
 /usr/local/bin/composer
-$ cd /var/www/public/crud/releases/20171123131942
+$ cd /var/www/public/crud/releases/20171123132916
 $ /usr/local/bin/composer install --no-interaction --dev --prefer-dist
-cd /var/www/public/crud/releases/20171123131942
+cd /var/www/public/crud/releases/20171123132916
 /usr/local/bin/composer install --no-interaction --dev --prefer-dist
 You are using the deprecated option "dev". Dev packages are installed by default now.
 Loading composer repositories with package information
@@ -127,66 +127,65 @@ Updating the "app/config/parameters.yml" file
 > Sensio\Bundle\DistributionBundle\Composer\ScriptHandler::prepareDeploymentTarget
 /usr/local/bin/npm
 /usr/local/bin/bower
-$ cd /var/www/public/crud/releases/20171123131942
-$ chmod -R 755 /var/www/public/crud/releases/20171123131942/app/database/production.sqlite
-$ chmod -R g+s /var/www/public/crud/releases/20171123131942/app/database/production.sqlite
-$ chown -R www-data:www-data /var/www/public/crud/releases/20171123131942/app/database/production.sqlite
-cd /var/www/public/crud/releases/20171123131942
-chmod -R 755 /var/www/public/crud/releases/20171123131942/app/database/production.sqlite
-chmod -R g+s /var/www/public/crud/releases/20171123131942/app/database/production.sqlite
-chown -R www-data:www-data /var/www/public/crud/releases/20171123131942/app/database/production.sqlite
-chmod: cannot access ‘/var/www/public/crud/releases/20171123131942/app/database/production.sqlite’: No such file or directory
-$ cd /var/www/public/crud/releases/20171123131942
-$ chmod -R 755 /var/www/public/crud/releases/20171123131942/storage
-$ chmod -R g+s /var/www/public/crud/releases/20171123131942/storage
-$ chown -R www-data:www-data /var/www/public/crud/releases/20171123131942/storage
-cd /var/www/public/crud/releases/20171123131942
-chmod -R 755 /var/www/public/crud/releases/20171123131942/storage
-chmod -R g+s /var/www/public/crud/releases/20171123131942/storage
-chown -R www-data:www-data /var/www/public/crud/releases/20171123131942/storage
-chmod: cannot access ‘/var/www/public/crud/releases/20171123131942/storage’: No such file or directory
-$ cd /var/www/public/crud/releases/20171123131942
-$ chmod -R 755 /var/www/public/crud/releases/20171123131942/public
-$ chmod -R g+s /var/www/public/crud/releases/20171123131942/public
-$ chown -R www-data:www-data /var/www/public/crud/releases/20171123131942/public
-cd /var/www/public/crud/releases/20171123131942
-chmod -R 755 /var/www/public/crud/releases/20171123131942/public
-chmod -R g+s /var/www/public/crud/releases/20171123131942/public
-chown -R www-data:www-data /var/www/public/crud/releases/20171123131942/public
-chmod: cannot access ‘/var/www/public/crud/releases/20171123131942/public’: No such file or directory
-$ ln -s /var/www/public/crud/releases/20171123131942 /var/www/public/crud/current-temp
+$ cd /var/www/public/crud/releases/20171123132916
+$ chmod -R 755 /var/www/public/crud/releases/20171123132916/app/database/production.sqlite
+$ chmod -R g+s /var/www/public/crud/releases/20171123132916/app/database/production.sqlite
+$ chown -R www-data:www-data /var/www/public/crud/releases/20171123132916/app/database/production.sqlite
+cd /var/www/public/crud/releases/20171123132916
+chmod -R 755 /var/www/public/crud/releases/20171123132916/app/database/production.sqlite
+chmod -R g+s /var/www/public/crud/releases/20171123132916/app/database/production.sqlite
+chown -R www-data:www-data /var/www/public/crud/releases/20171123132916/app/database/production.sqlite
+chmod: cannot access ‘/var/www/public/crud/releases/20171123132916/app/database/production.sqlite’: No such file or directory
+$ cd /var/www/public/crud/releases/20171123132916
+$ chmod -R 755 /var/www/public/crud/releases/20171123132916/storage
+$ chmod -R g+s /var/www/public/crud/releases/20171123132916/storage
+$ chown -R www-data:www-data /var/www/public/crud/releases/20171123132916/storage
+cd /var/www/public/crud/releases/20171123132916
+chmod -R 755 /var/www/public/crud/releases/20171123132916/storage
+chmod -R g+s /var/www/public/crud/releases/20171123132916/storage
+chown -R www-data:www-data /var/www/public/crud/releases/20171123132916/storage
+chmod: cannot access ‘/var/www/public/crud/releases/20171123132916/storage’: No such file or directory
+$ cd /var/www/public/crud/releases/20171123132916
+$ chmod -R 755 /var/www/public/crud/releases/20171123132916/public
+$ chmod -R g+s /var/www/public/crud/releases/20171123132916/public
+$ chown -R www-data:www-data /var/www/public/crud/releases/20171123132916/public
+cd /var/www/public/crud/releases/20171123132916
+chmod -R 755 /var/www/public/crud/releases/20171123132916/public
+chmod -R g+s /var/www/public/crud/releases/20171123132916/public
+chown -R www-data:www-data /var/www/public/crud/releases/20171123132916/public
+chmod: cannot access ‘/var/www/public/crud/releases/20171123132916/public’: No such file or directory
+$ ln -s /var/www/public/crud/releases/20171123132916 /var/www/public/crud/current-temp
 $ mv -Tf /var/www/public/crud/current-temp /var/www/public/crud/current
-ln -s /var/www/public/crud/releases/20171123131942 /var/www/public/crud/current-temp
+ln -s /var/www/public/crud/releases/20171123132916 /var/www/public/crud/current-temp
 mv -Tf /var/www/public/crud/current-temp /var/www/public/crud/current
 
-$ cd /var/www/public/crud/releases/20171123131942
+$ cd /var/www/public/crud/releases/20171123132916
 $ php bin/console d:d:c --if-not-exists
-cd /var/www/public/crud/releases/20171123131942
+cd /var/www/public/crud/releases/20171123132916
 php bin/console d:d:c --if-not-exists
-Created database `symfony` for connection named default
-$ cd /var/www/public/crud/releases/20171123131942
-$ php bin/console d:s:u
-cd /var/www/public/crud/releases/20171123131942
-php bin/console d:s:u
-ATTENTION: This operation should not be executed in a production environment.
-           Use the incremental update to detect changes during development and use
-           the SQL DDL provided to manually update your database in production.
+Database `symfony` for connection named default already exists. Skipped.
+$ cd /var/www/public/crud/releases/20171123132916
+$ php bin/console d:s:u --force
+cd /var/www/public/crud/releases/20171123132916
+php bin/console d:s:u --force
+Nothing to update - your database is already in sync with the current entity metadata.
+$ cd /var/www/public/crud/releases/20171123132916
+$ php bin/console cache:clear
+cd /var/www/public/crud/releases/20171123132916
+php bin/console cache:clear
+// Clearing the cache for the dev environment with debug                       
+ // true                                                                        
 
-The Schema-Tool would execute "6" queries to update the database.
-Please run the operation by passing one - or both - of the following options:
-    doctrine:schema:update --force to execute the command
-    doctrine:schema:update --dump-sql to dump the SQL statements to the screen
-$ cd /var/www/public/crud/releases/20171123131942
-$ php bin/console cache:clear e=prod
-cd /var/www/public/crud/releases/20171123131942
-php bin/console cache:clear e=prod
-[Symfony\Component\Console\Exception\RuntimeException]  
-  Too many arguments, expected arguments "command".       
-                                                          
+
+                                                                               
+  [Symfony\Component\Filesystem\Exception\IOException]                         
+  Failed to remove directory "/var/www/public/crud/releases/20171123132916/va  
+  r/cache/de~/doctrine": .                                                     
+                                                                               
 
 cache:clear [--no-warmup] [--no-optional-warmers] [-h|--help] [-q|--quiet] [-v|vv|vvv|--verbose] [-V|--version] [--ansi] [--no-ansi] [-n|--no-interaction] [-e|--env ENV] [--no-debug] [--] <command>
-|=> Successfully deployed release 20171123131942
-$ rm -rf /var/www/public/crud/releases/20171123105802
-rm -rf /var/www/public/crud/releases/20171123105802
+|=> Successfully deployed release 20171123132916
+$ rm -rf /var/www/public/crud/releases/20171123111133
+rm -rf /var/www/public/crud/releases/20171123111133
 
 |=> Removing <info>1 release</info> from the server
