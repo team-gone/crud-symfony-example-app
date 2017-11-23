@@ -111,6 +111,8 @@ VirtualHost with Apache2 must be setup like this :
 
 # Functionals tests
 
+Referentials : https://gist.github.com/mnapoli/5848556
+
 Start server standalone selenium with IE, safari and Edge :
 
 Java JRE and JDK 8 is required.
