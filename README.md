@@ -16,7 +16,7 @@ Go to your vagrant
 =====
 
 ```
-sudo apt-get install --reinstall `dpkg -l | grep 'ii  php7' | awk '{ printf($2" "); next}'`
+sudo apt-get install --reinstall `dpkg -l | grep 'ii  php7' | sed -e 's/php7.0/php7.1/g' | awk '{ printf($2" "); next}'`
 ```
 
 Scotch box
@@ -105,7 +105,7 @@ VirtualHost with Apache2 must be setup like this :
 
 # Functionals tests
 
-Start server standalone selenium with IE, sfari and Edge :
+Start server standalone selenium with IE, safari and Edge :
 
 Java JRE and JDK 8 is required.
 
