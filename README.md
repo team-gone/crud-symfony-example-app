@@ -8,7 +8,7 @@ Install on your host
 =======
 
 ```
-sudo apt get update
+sudo apt update
 sudo apt install vagrant VirtualBox
 ```
 
@@ -16,6 +16,7 @@ Go to your vagrant
 =====
 
 ```
+sudo apt update
 sudo apt-get install --reinstall `dpkg -l | grep 'ii  php7' | awk '{ printf($2" "); next}'`
 ```
 
@@ -118,3 +119,98 @@ Then open another window and go to project and do a
 ```
 	vendor/bin/behat
 ```
+
+# Deploy with Rocketerr
+
+Vagrant 1 is the Jenkins vagrant
+Vagrant 2 is the Prod vagrant vagrant
+
+1. Create Vagrant 2
+
+	```
+	git clone https://github.com/scotch-io/scotch-box
+	cd scotch-box
+	vi Vagrantfile # Change IP to 192.168.33.11
+	vagrant up
+	```
+
+2. Reinstall whole same package than the Vagrant 1.
+
+3. Ssh connection
+	
+	On Vagrant 1
+
+	```
+		ssh-keygen -t rsa
+		cat ~/.ssh/id_rsa.pub # Copy
+	```
+
+	On Vagrant 2
+
+	```
+		vagrant ssh 
+		nano ~/.ssh/authorized_keys # Paste the key to next line
+	```
+
+4. On Jenkins
+	
+	We could now do 
+
+	```
+		ssh vagrant@ip.on.vagrant.2 
+	```
+
+5. On vagrant 1 With Rocketer rwget http://rocketeer.autopergamene.eu/versions/
+
+	```
+		rocketeer.phar
+ 		chmod +x rocketeer.phar
+		mv rocketeer.phar /usr/local/bin/rocketeer
+	```
+
+	Then init and feel information like this 
+
+	```
+		rocketeer ignite
+
+		No connections have been set, please create one: (production)
+		No host is set for [production/0], please provide one:192.168.33.11
+		No username is set for [production/0], please provide one:vagrant
+		No password or SSH key is set for [production/0], which would you use? (key) [key/password]
+		Please enter the full path to your key (/home/vagrant/.ssh/id_rsa)
+		If a keyphrase is required, provide it
+		No repository is set for [repository], please provide one:https://github.com/team-gone/crud-symfony-example-app
+		production/0 | Ignite (Creates Rocketeer's configuration)
+		What is your application's name ? (public)crud
+	```
+
+	1.1 Value to edit in remote.php and Apache on Vagrant 2
+
+		```
+			nano .rocketeer/remote.php
+		```
+
+		Change
+
+		```
+			'root_directory' => '/var/www/public'
+		```
+
+		And on Apache
+
+		```
+		sudo nano /etc/apache2/sites-available/scotchbox.local.conf
+		```
+
+		Change
+
+		```
+		DocumentRoot /var/www/public/crud/web
+		```
+
+		Restart and reload apache2
+
+		```
+			sudo service apache2 reload
+			sudo service apache2 restart
+		```
