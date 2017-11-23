@@ -23,8 +23,16 @@ return [
 
     // Tasks to execute after the core Rocketeer Tasks
     'after'  => [
-        'setup'   => [],
-        'deploy'  => [],
+        'setup'   => [
+            'php bin/console d:d:c --if-not-exists',
+            'php bin/console d:s:u --force',
+            'php bin/console cache:clear'
+        ],
+        'deploy'  => [
+            'php bin/console d:d:c --if-not-exists',
+            'php bin/console d:s:u --force',
+            'php bin/console cache:clear'
+        ],
         'cleanup' => [],
     ],
 
