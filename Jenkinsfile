@@ -28,6 +28,8 @@ pipeline {
         sh 'php vendor/bin/phpcs --config-set installed_paths ../../endouble/symfony3-custom-coding-standard/ && php vendor/bin/phpcs --standard=Symfony3Custom src'
 
         sh 'php vendor/bin/phpcpd src'
+
+        sh 'php vendor/bin/pdepend --summary-xml=/tmp/$(date +"%y-%m-%d-%H%M")-pdepend-report.xml src'
       }
     }
     stage('Deploy') {
