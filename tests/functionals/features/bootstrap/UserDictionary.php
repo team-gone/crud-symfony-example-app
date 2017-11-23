@@ -58,4 +58,5 @@ trait UserDictionary
 
         return $user;
     }
+
 }
